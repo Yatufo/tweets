@@ -1,21 +1,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { Link } from 'react-router'
-import Questions from 'components/Questions'
+import UsersComponent from 'components/UsersComponent'
 import Immutable from 'immutable'
 
-describe('Component::Questions', function(){
+describe('Component::UsersComponent', function(){
   let props
   beforeEach(function(){
     props = {
       questions: Immutable.fromJS([
-        { id: 1, content: 'the-content-1' },
-        { id: 2, content: 'the-content-2' }
+        { id: 1, name: 'name1' },
+        { id: 2, name: 'name2' }
       ])
     }
   })
   function renderDoc () {
-    return shallow(<Questions {...props} />)
+    return shallow(<UsersComponent {...props} />)
   }
 
   it('renders questions', function(){
