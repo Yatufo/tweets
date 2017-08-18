@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import questions from 'reducers/questions'
-import questionDetail from 'reducers/questionDetail'
+import UsersReducer from 'reducers/UsersReducer'
+import TweetsReducer from 'reducers/TweetsReducer'
 
 const rootReducer = combineReducers({
-  questions,
-  questionDetail
+  users : UsersReducer,
+  tweets : TweetsReducer
 })
 
 export default rootReducer

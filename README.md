@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/Yatufo/tweets.svg?branch=master)](https://travis-ci.org/Yatufo/tweets)
+[![Dependency Status](https://dependencyci.com/github/Yatufo/tweets/badge)](https://dependencyci.com/github/Yatufo/tweets)
+
+
 
 ## Start
 
@@ -91,7 +94,7 @@ This is achieved by passing a `history` instance to action creators, and use `hi
 On the client side, `react-router` would then take care the rest of redirecting logic,
 while on server side, we subscribe the url-chaning events on each request, and redirect requests to proper pages if needed.
 
-Such implementation can be found in [`QuestionContainer`](https://github.com/mz026/universal-redux-template/blob/master/app/containers/Question.js),
+Such implementation can be found in [`QuestionContainer`](https://github.com/mz026/universal-redux-template/blob/master/app/containers/UserTweetsContainer.js),
 [`questions action`](https://github.com/mz026/universal-redux-template/blob/master/app/actions/questions.js)
 
 
@@ -115,7 +118,7 @@ To deploy this app to production environment:
 
 - Kick off the server with:
 
-` NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/server`
+    ` NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/server`
 
 ### Deploy to Heroku
 
@@ -129,4 +132,4 @@ For this case, the `API_BASE_URL` mention above would be `https://redux-template
 
 
 ## Resources:
-- [Blogpost on Codementor](https://www.codementor.io/reactjs/tutorial/redux-server-rendering-react-router-universal-web-app)
+  - [Blogpost on Codementor](https://www.codementor.io/reactjs/tutorial/redux-server-rendering-react-router-universal-web-app)

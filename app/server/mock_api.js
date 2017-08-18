@@ -1,24 +1,42 @@
 let _ = require('lodash')
 
-function question (id) {
+function question(id) {
   let sampleContent = '--the question content--'
-  return {
-    id,
-    content: `sample-${id}: ${sampleContent}`,
-    user_id: id
+  return {id, content: `sample-${id}: ${sampleContent}`, user_id: id}
+}
+const tweets = [
+  {
+    id: 'tweet1',
+    userId: 'realDonaldTrup',
+    content: "@hillaryCliton what's up losers?!"
+  }, {
+    id: 'tweet2',
+    userId: 'realDonaldTrup',
+    content: "@hillaryCliton fake news!"
+  }, {
+    id: 'tweet3',
+    userId: 'hillaryCliton',
+    content: "Hey @realDonaldTrup!"
+  }, {
+    id: 'tweet4',
+    userId: 'hillaryCliton',
+    content: "@realDonaldTrup you are so mean"
   }
+]
+const users = [
+  {
+    id: 'realDonaldTrup',
+    name: "Donald Trump",
+  }, {
+    id: 'hillaryCliton',
+    name: "Hillary Clinton",
+  }
+]
+
+export const findUsers = () => {
+  return users
 }
 
-export const questions = _.range(1, 10).map((i)=> question(i))
-export function getUser (id) {
-  return {
-    id,
-    name: `user name - ${id}`
-  }
-}
-export function getQuestion (id) {
-  if (id === 'not-found') {
-    return null
-  }
-  return question(id)
+export function findUserTweets(userId) {
+  return _.filter(tweets, {userId: userId})
 }

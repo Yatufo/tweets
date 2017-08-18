@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 
@@ -8,11 +7,8 @@ class App extends Component {
     return (
       <div>
         <Helmet
-          defaultTitle="Redux real-world example"
-          titleTemplate="%s - Redux real-world example"
-          meta={[
-            {"name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express"},
-          ]}
+          defaultTitle="Tweeter viewer"
+          titleTemplate="%s - Tweeter viewer"
           htmlAttributes={{"lang": "en"}}
         />
         {this.props.children}
