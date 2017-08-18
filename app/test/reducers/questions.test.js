@@ -8,10 +8,10 @@ describe('Reducer::Question', function(){
     expect(newState.toJS()).to.deep.equal([])
   })
 
-  describe('on LOADED_QUESTIONS', function(){
+  describe('on LOADED_USERS', function(){
     it('returns the `response` in given action', function(){
       let action = {
-        type: ActionType.LOADED_QUESTIONS,
+        type: ActionType.LOADED_USERS,
         response: { responseKey: 'responseVal' }
       }
       let newState = questionReducer(undefined, action)

@@ -10,7 +10,7 @@ describe('Action::Question', function(){
       expect(action[CALL_API]).to.deep.equal({
         method: 'get',
         path: '/api/questions',
-        successType: ActionType.LOADED_QUESTIONS
+        successType: ActionType.LOADED_USERS
       })
     })
   })

@@ -40,18 +40,26 @@ if (process.env.NODE_ENV === 'production') {
 server.set('views', path.join(__dirname, 'views'))
 server.set('view engine', 'ejs')
 
+const mockApi = require('./mock_api')
+
 // mock apis
+server.get('/api/users', (req, res)=> {
+  let { users } = mockApi
+  res.send(users)
+})
+
+
 server.get('/api/questions', (req, res)=> {
-  let { questions } = require('./mock_api')
+  let { questions } = mockApi
   res.send(questions)
 })
 
 server.get('/api/users/:id', (req, res)=> {
-  let { getUser } = require('./mock_api')
+  let { getUser } = mockApi
   res.send(getUser(req.params.id))
 })
 server.get('/api/questions/:id', (req, res)=> {
-  let { getQuestion } = require('./mock_api')
+  let { getQuestion } = mockApi
   let question = getQuestion(req.params.id)
   if (question) {
     res.send(question)

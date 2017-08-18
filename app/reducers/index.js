@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
-import questions from 'reducers/questions'
-import questionDetail from 'reducers/questionDetail'
+import UsersReducer from 'reducers/UsersReducer'
 
 const rootReducer = combineReducers({
-  questions,
-  questionDetail
+  users : UsersReducer
 })
 
 export default rootReducer

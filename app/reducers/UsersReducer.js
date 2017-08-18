@@ -1,14 +1,15 @@
 import * as ActionType from 'actions/UsersActions'
 import Immutable from 'immutable'
 
-const defaultState = Immutable.fromJS([])
-function usersReducer(state = defaultState, action) {
-  switch (action.type) {
+let defaultState = Immutable.fromJS([])
+function UsersReducer (state = defaultState, action) {
+  switch(action.type) {
     case ActionType.LOADED_USERS:
-      Immutable.fromJS(action.response)
+      return Immutable.fromJS(action.response)
+      break
     default:
       return state
   }
 }
 
-export default usersReducer
+export default UsersReducer

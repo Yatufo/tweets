@@ -4,15 +4,16 @@ import PropTypes from 'prop-types'
 import { List } from 'immutable'
 
 class UsersComponent extends Component {
+
   render() {
+    console.log("UsersComponent", JSON.stringify(this.props))
     return (
       <ul>
         {
           this.props.users.map((user)=> {
-            let id = user.id
             return (
-              <li key={user.id}>
-                <Link to={`/users/${user.id}/tweets`}>{user.name}</Link>
+              <li key={user.get("id")}>
+                <Link to={`/users/${user.get("id")}`}> { user.get("name")}</Link>
               </li>
             )
           })
