@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadQuestions } from 'actions/UsersActions'
+import { loadUsers } from 'actions/UsersActions'
 import { Link } from 'react-router'
 import _ from 'lodash'
 import UsersComponent from 'components/UsersComponent'
@@ -9,11 +9,11 @@ import PropTypes from 'prop-types'
 
 class UsersContainer extends Component {
   static fetchData({ store }) {
-    return store.dispatch(loadQuestions())
+    return store.dispatch(loadUsers())
   }
 
   componentDidMount() {
-    this.props.loadQuestions()
+    this.props.loadUsers()
   }
   render() {
     return (
@@ -33,4 +33,4 @@ function mapStateToProps (state) {
 }
 
 export { UsersContainer }
-export default connect(mapStateToProps, { loadQuestions })(UsersContainer)
+export default connect(mapStateToProps, { loadUsers })(UsersContainer)

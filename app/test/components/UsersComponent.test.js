@@ -1,27 +1,26 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import { Link } from 'react-router'
+import {shallow} from 'enzyme'
+import {Link} from 'react-router'
 import UsersComponent from 'components/UsersComponent'
 import Immutable from 'immutable'
 
-describe('Component::UsersComponent', function(){
+describe('Component::UsersComponent', function() {
   let props
-  beforeEach(function(){
+  beforeEach(function() {
     props = {
-      questions: Immutable.fromJS([
-        { id: 1, name: 'name1' },
-        { id: 2, name: 'name2' }
-      ])
+      users: Immutable.fromJS(_.range(1, 10).map((id) => {
+        return {'id': id, 'name': `name ${id}`}
+      }))
     }
   })
-  function renderDoc () {
-    return shallow(<UsersComponent {...props} />)
+  function renderDoc() {
+    return shallow(<UsersComponent {...props}/>)
   }
 
-  it('renders questions', function(){
+  it('should render all users links', function() {
     let doc = renderDoc()
-    let questionComps = doc.find(Link)
+    let usersLinks = doc.find(Link)
 
-    expect(questionComps.length).to.equal(props.questions.size + 1)
+    expect(usersLinks.length).to.equal(props.users.size)
   })
 })

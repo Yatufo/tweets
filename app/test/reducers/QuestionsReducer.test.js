@@ -1,10 +1,10 @@
-import questionReducer from 'reducers/questions'
-import * as ActionType from 'actions/questions'
+import usersReducer from 'reducers/UsersReducer'
+import * as ActionType from 'actions/UsersActions'
 
-describe('Reducer::Question', function(){
+describe('Reducer::Users', function(){
   it('returns an empty array as default state', function(){
     let action = { type: 'unknown' }
-    let newState = questionReducer(undefined, { type: 'unknown' })
+    let newState = usersReducer(undefined, { type: 'unknown' })
     expect(newState.toJS()).to.deep.equal([])
   })
 
@@ -14,7 +14,7 @@ describe('Reducer::Question', function(){
         type: ActionType.LOADED_USERS,
         response: { responseKey: 'responseVal' }
       }
-      let newState = questionReducer(undefined, action)
+      let newState = usersReducer(undefined, action)
       expect(newState.toJS()).to.deep.equal(action.response)
     })
   })

@@ -4,11 +4,14 @@ import sinonChai from 'sinon-chai'
 import sinon from 'sinon'
 import jsdom from 'jsdom'
 import { config as configDotenv } from 'dotenv'
+import _ from 'lodash'
+
 
 configDotenv()
 chai.use(sinonChai)
 chai.use(chaiAsPromised)
 
+global._ = _
 global.sinon = sinon
 global.expect = chai.expect
 
