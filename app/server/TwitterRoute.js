@@ -24,6 +24,6 @@ const convertTweet = (data)=>{
 
 export const getTweets = (req, res) => {
   twitter.get('statuses/user_timeline', {screen_name: req.params.userId}, (error, tweets, response) =>{
-    res.send(tweets.map(convertTweet));
+    res.send((tweets || []).map(convertTweet));
   });
 }
