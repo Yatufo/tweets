@@ -1,7 +1,25 @@
 [![Build Status](https://travis-ci.org/Yatufo/tweets.svg?branch=master)](https://travis-ci.org/Yatufo/tweets)
 [![Dependency Status](https://dependencyci.com/github/Yatufo/tweets/badge)](https://dependencyci.com/github/Yatufo/tweets)
 
+# Twitter Aldo Demo
 
+[Deployed at Heroku](https://twitteraldo.herokuapp.com/)
+
+## Features
+ - Shows all the users and when clicking it load the users tweets.
+ - Uses Webpack React, Redux, and Redux-thunk instead of Redux-Sagas
+ - Most of the introduced code is in functional style.
+ - Makes use of the main concepts to render the app as shown below:
+ ![React Flow](ReactFlow.gif) 
+ 
+
+## TODOS 
+- Use socket.io to stream events when the users creates new tweets.
+- Full test coverage unit, integration and e2e.
+- The real call to twitter should not be in the mock api, only for demo purposes.
+
+
+Based on the template: (https://github.com/mz026/universal-redux-template)
 
 ## Start
 
